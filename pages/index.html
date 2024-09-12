@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%extends 'main.html'%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Techno Services</h1>
+    {%block main%}
+    <h1>Tech Park</h1>
+    <ul>
+        <li>Founder Name: {{name}}</li>
+        <li>Address : {{add}}</li>
+    </ul>
+    <hr color="red">
+
+
+    <form action="result" method="post">
+        {% csrf_token%}
+        <input type="number" name="n1" placeholder="Enter Number1">
+
+        <select name="operator">
+            <option value="+" selected>+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="**">**</option>
+            <option value="%">%</option>
+        </select>
+
+        <input type="number" name="n2" placeholder="Enter Number 2">
+
+        <input type="submit" value="Result">
+    </form>
+    <!-- {% load static %}
+    <img src="{% static '../Assets/services_book.jpg' %}" alt="logo"> -->
+    {%endblock%}
 </body>
 </html>
