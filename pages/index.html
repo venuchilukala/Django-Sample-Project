@@ -15,30 +15,6 @@
         <li>Address : {{add}}</li>
     </ul>
     <hr>
-
-    <table class="table table-bordered table-hover">
-        <tr>
-            <td>Name</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>Availability</td>
-        </tr>
-        {%for i in all%}
-            <tr>
-                <td>{{i.name}}</td>
-                <td>{{i.des}}</td>
-                <td>{{i.price}}</td>
-                <td>{%if i.status%}
-                        <span class="text-success">Available</span>
-                    {%else%}
-                        <span class="text-danger">Not Available</span>
-                    {%endif%}
-                </td>
-            </tr>
-        {%endfor%}
-    </table>
-
-
     <hr>
     <img src="{% static 'Assets/CT-1.jpg' %}" alt="logo">
 
