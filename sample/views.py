@@ -1,7 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import courses
 
 # Create your views here.
+
+def course(request):
+    all_courses = courses.objects.all()
+    data1 = {
+        'data' : all_courses
+    }
+    return render(request,'webpage.html',data1)
 
 def Home(request):
     founder = "John Wesley"
