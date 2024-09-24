@@ -1,7 +1,10 @@
 from django.urls import path
-from .views import Home,result,course
+from .views import Home,result,course,validate,signup,login
 
 urlpatterns =[
-    path('',course),
-    path('result',result)
+    path('',validate),
+    path('result',result),
+    path('signup',signup),
+    path('login',login),
+    
 ]
